@@ -6,7 +6,7 @@ name: Building luci-theme-argon2
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - 'Makefile'
   workflow_dispatch:
@@ -21,6 +21,21 @@ on:
         required: true
         default: ''
         type: string
+      link:
+        description: 'Neko version'
+        required: true
+        default: ''
+        type: string 
+      pat:
+        description: 'Neko version'
+        required: true
+        default: ''
+        type: string  
+      nama:
+        description: 'Neko version'
+        required: true
+        default: ''
+        type: string 
        
     
 jobs: 
@@ -47,9 +62,9 @@ jobs:
       - name: Preparing Neko
         run: |
               echo ""
-              git clone https://github.com/Houjie80/argon2
+              git clone https://github.com/Houjie80/${{ inputs.link }}
               mkdir feeds artifacts
-              cp -rf ./argon2/luci-theme-argon2 ./feeds
+              cp -rf ./${{ inputs.pat }} ./feeds
         
       - name: Building luci-theme-argon2
         uses: nosignals/gh-action-sdk@main
@@ -80,7 +95,7 @@ jobs:
         shell: bash
         run: |
           mkdir ./artifact
-          cp -rf ./neko-23.05.4_x86_64/* ./artifact/luci-theme-argon2_${{ inputs.version }}_dev_all.ipk
+          cp -rf ./neko-23.05.4_x86_64/* ./artifact/luci-${{ inputs.nama }}_${{ inputs.version }}_dev_all.ipk
         
       - name: Upload release asset
         uses: svenstaro/upload-release-action@v2
