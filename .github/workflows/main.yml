@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths:
-      - Makefile
+      - 'Makefile'
   workflow_dispatch:
     inputs:
       version:
@@ -49,7 +49,7 @@ jobs:
               echo ""
               git clone https://github.com/Houjie80/argon2
               mkdir feeds artifacts
-              cp -rf ./luci-theme-argon2 ./feeds
+              cp -rf ./argon2/luci-theme-argon2 ./feeds
         
       - name: Building luci-theme-argon2
         uses: nosignals/gh-action-sdk@main
