@@ -22,17 +22,17 @@ on:
         default: ''
         type: string
       link:
-        description: 'Neko version'
+        description: 'Neko link'
         required: true
         default: ''
         type: string 
       pat:
-        description: 'Neko version'
+        description: 'Neko pat'
         required: true
         default: ''
         type: string  
       nama:
-        description: 'Neko version'
+        description: 'Neko nama'
         required: true
         default: ''
         type: string 
