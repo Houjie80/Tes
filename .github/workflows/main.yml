@@ -36,6 +36,11 @@ on:
         required: true
         default: ''
         type: string 
+     ipkx:
+        description: 'Neko ipkx'
+        required: true
+        default: ''
+        type: string    
        
     
 jobs: 
@@ -72,14 +77,14 @@ jobs:
           ARCH: ${{ matrix.arch }}-${{ matrix.release }}
           ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
           FEED_DIR: ${{ github.workspace }}/feeds
-          PACKAGES: luci-theme-argon2
+          PACKAGES: ${{ inputs.ipkx }}
           NO_SHFMT_CHECK: 1
         
       - name: Delivering Package
         uses: actions/upload-artifact@v3
         with:
           name: neko-${{ matrix.release }}_${{ matrix.arch }}
-          path: ${{ github.workspace }}/artifacts/bin/packages/${{ matrix.arch }}/action/luci-theme*
+          path: ${{ github.workspace }}/artifacts/bin/packages/${{ matrix.arch }}/action/luci-app*
 
   push_packages:
     needs: build_ipk
