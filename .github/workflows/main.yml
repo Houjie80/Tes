@@ -36,7 +36,7 @@ on:
         required: true
         default: ''
         type: string 
-     ipkx:
+      ipkx:
         description: 'Neko ipkx'
         required: true
         default: ''
