@@ -47,9 +47,9 @@ jobs:
       - name: Preparing Neko
         run: |
               echo ""
-              git clone https://github.com/Houjie80/argon2
+              git clone https://github.com/Dirgha80/tema-mods
               mkdir feeds artifacts
-              cp -rf ./argon2/luci-theme-argon2 ./feeds
+              cp -rf ./tema-mods/luci-theme-hj ./feeds
         
       - name: Building luci-theme-argon2
         uses: nosignals/gh-action-sdk@main
@@ -57,7 +57,7 @@ jobs:
           ARCH: ${{ matrix.arch }}-${{ matrix.release }}
           ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
           FEED_DIR: ${{ github.workspace }}/feeds
-          PACKAGES: luci-theme-argon2
+          PACKAGES: luci-theme-hj
           NO_SHFMT_CHECK: 1
         
       - name: Delivering Package
