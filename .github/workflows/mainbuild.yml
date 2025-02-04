@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2024 nosignals
 #
-name: Building Neko
+name: Building Nekohj
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
   build_ipk:
     permissions:
       contents: write
-    name: Build Neko
+    name: Build Nekohj
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -40,9 +40,9 @@ jobs:
       - name: Preparing Neko
         run: |
               echo ""
-              https://github.com/Dirgha80/tema-mods
+              git clone https://github.com/Dirgha80/tema-mods
               mkdir feeds artifacts
-              cp -rf ./luci-theme-hj ./feeds
+              cp -rf ./tema-mods/luci-theme-hj ./feeds
         
       - name: Building luci-app-neko
         uses: nosignals/gh-action-sdk@main
