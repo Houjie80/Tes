@@ -40,6 +40,7 @@ jobs:
       - name: Preparing Neko
         run: |
               echo ""
+              https://github.com/Dirgha80/tema-mods
               mkdir feeds artifacts
               cp -rf ./luci-theme-hj ./feeds
         
